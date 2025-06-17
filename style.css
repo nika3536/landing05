@@ -189,28 +189,63 @@ body {
   background-color: #474040; /* Website dark gray */
 
 }
-.btn-circle-link {
+/* .btn-circle-link {
   position: fixed;
-  top: 390px;  /* Adjust as needed to match the yellow circle */
-  left: 560px; /* Adjust for X-axis alignment */
-  z-index: 20;
+  bottom: 70px;     
+  left: 50%;         
+  transform: translateX(-50%); 
+  z-index: 20;  
+  display: flex;
+  justify-content: center;
 }
 
 .btn-circle-img {
-  width: 180px; /* Resize based on your preference */
-  animation: float 1s ease-in-out infinite; /* Optional */
+  width: 180px; 
+  animation: float 1s ease-in-out infinite; 
 }
+
 @media screen and (max-width: 576px) {
   .btn-circle-img {
     width: 160px;
   }
 
   .btn-circle-link {
-    top: 35%; /* Adjust to align better on small screens */
-    left: 55%;
+    bottom: 70px;   
   }
-}     
+} */
 
+.btn-circle-link {
+  position: fixed;
+  bottom: 70px; /* Just above the social icons */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
+
+.claim-btn {
+  width: auto;
+  white-space: nowrap;
+  background-color: #00A550; /* Mint */
+  color: #fff;               /* Black text for contrast */
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00A550;
+  transition: all 0.3s ease;
+  animation: float 1s ease-in-out infinite; /* Optional floating effect */
+}
+
+.claim-btn:hover {
+  background-color: #28d7aa;
+  box-shadow: 0 0 15px #2FF5C2, 0 0 25px #2FF5C2;
+  transform: translateX(-50%) scale(1.05);
+}
 
 
 #fireworks-container {
@@ -221,4 +256,26 @@ body {
   height: 100%;
   pointer-events: none; /* so it doesn't block clicks */
   z-index: 9999; /* make sure it's on top */
+}
+
+
+#football-popup {
+  position: fixed;
+  bottom: 60px;
+  left: 80%;
+  transform: translateX(-50%);
+  font-size: 50px;
+  animation: bounce 2s infinite ease-in-out, rotate 3s linear infinite;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-30px); }
+}
+
+@keyframes rotate {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
 }
