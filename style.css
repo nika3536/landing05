@@ -106,7 +106,7 @@ body {
 /* Social Media Links */
 .social-links {
   position: fixed;
-  bottom: 50px; /* Bottom of screen */
+  bottom: 10px; /* Bottom of screen */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -115,8 +115,9 @@ body {
 }
 
 .social-icon {
-  width: 45px;
-  height: 45px;
+  position: relative;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   color: white;
   font-size: 24px;
@@ -124,7 +125,51 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: transform 0.3s ease;
+  background-color: #333;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Glowing ring animation */
+.social-icon::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: conic-gradient(
+    yellow 0deg,
+    transparent 90deg,
+    yellow 180deg,
+    transparent 270deg,
+    yellow 360deg
+  );
+  animation: spin 2s linear infinite;
+  z-index: 0;
+}
+
+/* Cover inner glow so icon appears clean inside */
+.social-icon::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background-color: inherit;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Icon stays on top */
+.social-icon i {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
 .social-icon:hover {
