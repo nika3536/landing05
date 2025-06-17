@@ -38,7 +38,7 @@ body {
 /* Fixed Contact/Register Buttons */
 .contact-resiter {
   position: fixed;
-  bottom: 70px;
+  bottom: 90px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ body {
   }
 
   .contact-resiter {
-    bottom: 130px;
+    bottom: 70px;
   }
 }
 .register-img,
@@ -88,7 +88,7 @@ body {
 }
 
 .contact-resiter{
-      animation: pulse 0.8s ease-in-out infinite;
+     animation: float 1s ease-in-out infinite; /* Optional */
 
 }
 /* Fade */
@@ -188,4 +188,35 @@ body {
 .social-icon.web {
   background-color: #474040; /* Website dark gray */
 
+}
+.btn-circle-link {
+  position: fixed;
+  top: 390px;  /* Adjust as needed to match the yellow circle */
+  left: 560px; /* Adjust for X-axis alignment */
+  z-index: 20;
+}
+
+.btn-circle-img {
+  width: 180px; /* Resize based on your preference */
+  animation: float 1s ease-in-out infinite; /* Optional */
+}
+@media screen and (max-width: 576px) {
+  .btn-circle-img {
+    width: 160px;
+  }
+
+  .btn-circle-link {
+    top: 35%; /* Adjust to align better on small screens */
+    left: 60%;
+  }
+}     
+
+#fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
 }
