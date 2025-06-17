@@ -15,7 +15,7 @@ html {
 
 /* Desktop Background */
 body {
-  background-image: url('image/freew168\ \(1\).jpg'); /* Your path */
+  background-image: url('image/freew\ \(1\).jpg'); /* Your path */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -47,7 +47,7 @@ body {
 /* Responsive Mobile View */
 @media screen and (max-width: 576px) {
   body {
-    background-image: url('image/freew168\ \(2\).jpg'); /* Your path for mobile */
+    background-image: url('image/freew\ \(2\).jpg'); /* Your path for mobile */
   }
 
   .register-img {
