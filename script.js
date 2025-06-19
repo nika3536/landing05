@@ -7,3 +7,15 @@ window.onload = () => {
   });
   fireworks.start();
 };
+
+  function launchEmoji() {
+    const emojiList = ['⚽', '🏆', '💸', '🎉', '🎯','Goal!'];
+    const emoji = document.createElement('div');
+    emoji.className = 'emoji';
+    emoji.style.left = Math.random() * 100 + 'vw';
+    emoji.textContent = emojiList[Math.floor(Math.random() * emojiList.length)];
+    document.body.appendChild(emoji);
+    setTimeout(() => emoji.remove(), 4000);
+  }
+
+  setInterval(launchEmoji, 500); // launch every 0.5 sec
