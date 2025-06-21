@@ -3,8 +3,6 @@
     src: url('font/KantumruyPro-Regular.ttf') format('truetype');
 }
 
-/* Reset */
-/* Base Reset */
 body,
 html {
   margin: 0;
@@ -19,29 +17,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-}
-
-/* Main Image Styling */
-.promotion_150 {
-  width: 300px;
-}
-
-/* Fixed Register Image */
-.register-img {
-  position: fixed;
-  bottom: 130px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* Fixed Contact/Register Buttons */
-.contact-resiter {
-  position: fixed;
-  bottom: 90px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 /* Responsive Mobile View */
@@ -63,50 +38,9 @@ body {
   z-index: 10;
 }
 
-/* Up and down */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.promotion_150 {
-  animation: float 2s ease-in-out infinite;
-}
-
-
-/* Zoomin Zoomout */
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.promotion_150 {
-  animation: pulse 0.8s infinite;
-}
-
-.contact-resiter{
-     animation: float 1s ease-in-out infinite; /* Optional */
-
-}
-/* Fade */
-/* .promotion_150 {
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-} */
-
-/* Social Media Links */
 .social-links {
   position: fixed;
-  bottom: 10px; /* Bottom of screen */
+  bottom: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -125,28 +59,12 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background-color: #333;
+  background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
   overflow: hidden;
   z-index: 1;
-   background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
 }
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,255,255, 0.4);
-  transform: scale(0);
-  animation: rip 0.6s ease-out;
-}
-@keyframes rip {
-  to { transform: scale(4); opacity: 0; }
-}
-@media (hover: none) {
-  .social-icon:active {
-    transform: scale(0.95);
-    filter: brightness(1.1);
-  }
-}
-/* Glowing ring animation */
+
+/* Animated glowing ring */
 .social-icon::before {
   content: '';
   position: absolute;
@@ -158,7 +76,7 @@ body {
   z-index: 0;
 }
 
-/* Cover inner glow so icon appears clean inside */
+/* Inner mask to keep icon clean */
 .social-icon::after {
   content: '';
   position: absolute;
@@ -168,12 +86,13 @@ body {
   z-index: 1;
 }
 
-/* Icon stays on top */
+/* Icon stays above glow */
 .social-icon i {
   position: relative;
   z-index: 2;
 }
 
+/* Animated ring spin */
 @keyframes spin {
   0% {
     transform: rotate(0turn);
@@ -183,54 +102,21 @@ body {
   }
 }
 
-.social-icon:hover {
-  transform: scale(1.1);
+/* Remove hover and active interactions */
+@media (hover: none) {
+  .social-icon:active {
+    transform: none;
+    filter: none;
+  }
 }
+
+/* Optional: ensure consistent initial scale */
 .social-icon.fb,
 .social-icon.telegram,
 .social-icon.web {
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
+  transform: none;
+  transition: none;
 }
-/* Colors */
-/* .social-icon.fb {
-  background-color: #1877F2; 
-}
-
-.social-icon.telegram {
-  background-color: #0088cc;
-
-}
-
-.social-icon.web {
-  background-color: #474040; 
-} */
-
-
-/* .btn-circle-link {
-  position: fixed;
-  bottom: 70px;     
-  left: 50%;         
-  transform: translateX(-50%); 
-  z-index: 20;  
-  display: flex;
-  justify-content: center;
-}
-
-.btn-circle-img {
-  width: 180px; 
-  animation: float 1s ease-in-out infinite; 
-}
-
-@media screen and (max-width: 576px) {
-  .btn-circle-img {
-    width: 160px;
-  }
-
-  .btn-circle-link {
-    bottom: 70px;   
-  }
-} */
 
 .btn-circle-link {
   position: fixed;
@@ -246,34 +132,35 @@ body {
   position: relative;
   width: auto;
   white-space: nowrap;
-  background-color: #00A550;
+  background: linear-gradient(135deg, #ff6a00, #ee0979); /* Sunset gradient */
   color: #fff;
   font-family: "Kantumruy Pro", sans-serif;
   font-size: 22px;
   font-weight: bold;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border: none;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 0 10px #00A550;
-  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.6), 0 0 25px rgba(255, 105, 135, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   z-index: 1;
 }
 
+/* Neon Border Glow Effect */
 .claim-btn::before {
   content: "";
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
   border-radius: 50px;
-  background: linear-gradient(90deg, #2FF5C2, #00A550, #2FF5C2, #00A550);
-  background-size: 400% 400%;
-  animation: neonRun 3s linear infinite;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #ff6a00, #ee0979);
+  background-size: 300% 300%;
+  animation: neonRun 4s linear infinite;
   z-index: -1;
-  filter: blur(4px);
+  filter: blur(6px);
 }
 
 @keyframes neonRun {
@@ -281,14 +168,14 @@ body {
     background-position: 0% 50%;
   }
   100% {
-    background-position: 400% 50%;
+    background-position: 300% 50%;
   }
 }
 
+/* Hover Behavior */
 .claim-btn:hover {
-  background-color: #28d7aa;
-  box-shadow: 0 0 20px #2FF5C2, 0 0 40px #2FF5C2;
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 0 25px #ff6a00, 0 0 50px #ee0979;
 }
 
 
@@ -321,3 +208,28 @@ body {
       opacity: 0;
     }
   }
+
+
+  .logo-container {
+  position: fixed;
+  bottom: 140px; /* Just above the CTA button */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 21;
+  animation: floatLogo 2.5s ease-in-out infinite;
+}
+
+.logo-img {
+  width: 200px;
+  max-width: 80vw;
+}
+
+/* Optional float animation */
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -6px);
+  }
+}
